@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import { Regions } from '../Models/regions.model';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { RegionsService } from '../Services/regions.service';
+import { Regions } from '../Models/regions.model';
+import { RegionsService } from '../Services/regions.service';
+
 
 @Component({
   selector: 'app-regions',
@@ -9,17 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./regions.component.css']
 })
 export class RegionsComponent implements OnInit {
+  constructor(private regionservice:RegionsService){}
 
-  // formGroup!:FormGroup;
-  // constructor(public formBuilder:FormBuilder, private regionService: RegionsService){}
-
+  region:Regions;
+  
   ngOnInit(): void {
-  //   this.formGroup=this.formBuilder.group({
-  //     label:[null, [Validators.required]] 
-  //   })
-   }
-
-  // onRegisterRegion():void{
-  // const r = new Regions();
-  // }
+    this.region = new Regions();
+  }
+  onSave(){
+    this.regionservice.createRegion(this.region).subscribe()
+  }
 }

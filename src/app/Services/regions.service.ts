@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { Observable } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegionsService {
-  CREATE_REGION = "http://localhost:8000/Api\RegionController@store";
+  private CREATE_URL = "http://localhost:8000/api/RegionController@store";
 
-  save(region:any):any{
-    const req = this.client.post<any>(`$(CREATE_REGION)`,region);
-    req.subscribe(data => {return data;});
+  constructor(private http: HttpClient) { }
+
+  // Enregistrer une nouvelle region dans l'API
+  createRegion(data: any): Observable<any> {
+    return this.http.post(this.CREATE_URL, data);
   }
 
-  constructor(public client: HttpClient) { }
+  // Supprimer une region
+
+  //modifier une region
+
 }

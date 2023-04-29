@@ -5,6 +5,7 @@ import { AboutUsComponent } from '../about-us/about-us.component';
 import { ContactComponent } from '../contact/contact.component';
 import { RouterModule } from '@angular/router';
 import { RegionListComponent } from '../regions/region-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { RegionListComponent } from '../regions/region-list.component';
     RegionListComponent
   ],
   imports: [
+    FormsModule,
     RouterModule.forChild([
       {path: 'participants', component: ParticipantComponent},
       {path: 'regions', component: RegionsComponent},

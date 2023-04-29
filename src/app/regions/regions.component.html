@@ -1,12 +1,12 @@
 <div class="container mt-5">
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col-md-8">
-            <form id="regForm">
+            <form id="regForm" #form="ngForm">
                 <h1 id="register">Enregistrer une region</h1>
                 <div class="all-steps" id="all-steps"> 
                   <span class="step"><i class="fa fa-save" style="font-size: 30px;"></i></span> 
                 </div>
-                <input type="text" placeholder="Enter Region"><br><br>
+                <input type="text" placeholder="Enter Region" [(ngModel)]="region.label" #label="ngModel" name="label"><br><br>
                 <button class="btn btn-primary" style="margin-left: 80%;">Enregistrer</button>
                 <button class="btn btn-primary" style="margin-top: 10%; margin-left: 80%;" [routerLink]="['/region-list']">Lister regions</button>
             </form>
