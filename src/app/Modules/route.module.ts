@@ -4,13 +4,15 @@ import { RegionsComponent } from '../regions/regions.component';
 import { AboutUsComponent } from '../about-us/about-us.component';
 import { ContactComponent } from '../contact/contact.component';
 import { RouterModule } from '@angular/router';
+import { RegionListComponent } from '../regions/region-list.component';
 
 @NgModule({
   declarations: [
     ParticipantComponent,
     RegionsComponent,
     AboutUsComponent,
-    ContactComponent
+    ContactComponent,
+    RegionListComponent
   ],
   imports: [
     RouterModule.forChild([
@@ -18,6 +20,8 @@ import { RouterModule } from '@angular/router';
       {path: 'regions', component: RegionsComponent},
       {path: 'about-us', component: AboutUsComponent},
       {path: 'contact', component: ContactComponent},
+      {path: 'region-list', component: RegionListComponent}
+
       
   ]),
 
